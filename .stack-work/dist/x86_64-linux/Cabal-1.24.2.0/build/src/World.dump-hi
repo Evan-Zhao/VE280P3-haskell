@@ -1,0 +1,496 @@
+
+==================== FINAL INTERFACE ====================
+2017-07-13 07:10:22.766661 UTC
+
+interface p3-0.1.0.0-7zhqcF8ucC8K7MXm5xR8Ti:World 8002
+  interface hash: 0a321a5363b6acafaced896873803e0d
+  ABI hash: c988560aa7f9dc18639fc0116dc122cd
+  export-list hash: 614742aeea9fb816b3981ea18bb92b3b
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 9d93c441140a17a52925efd6aa925b93
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  World.abilityReadName
+  World.adjustCont
+  World.adjustLine
+  World.at
+  World.contAt
+  World.creatureAt
+  World.creatureTuple
+  World.defaultError
+  World.dirReadName
+  World.dirShowName
+  World.drownError
+  World.heightError
+  World.make2D
+  World.makeLine
+  World.maxCreatures
+  World.maxHeight
+  World.maxProgram
+  World.maxSpecies
+  World.maxWidth
+  World.missingArgError
+  World.negRoundError
+  World.nullaryCount
+  World.opName
+  World.openFileError
+  World.outOfBound
+  World.outOfBoundError
+  World.overCreatureError
+  World.overInstError
+  World.overSpeciesError
+  World.overlapError
+  World.pointMoveBy
+  World.printHistory
+  World.printSingleGrid
+  World.readAbility
+  World.readDir
+  World.readInst
+  World.readTerrain
+  World.showDirLong
+  World.showDirShort
+  World.swapCont
+  World.terrainReadName
+  World.unknownAbError
+  World.unknownDirError
+  World.unknownInstError
+  World.unknownSpecError
+  World.unknownTerError
+  World.widthError
+  World.Ability{World.Arch World.Fly}
+  World.Creature{World.Creature c_canArch c_canFly c_direction c_location c_onHillActive c_progIdx c_species}
+  World.CreatureLabel
+  World.Direction{World.East World.North World.South World.West}
+  World.Grid{World.Grid g_contents g_height g_width}
+  World.GridCont{World.GridCont g_creatureP g_terrain}
+  World.History{World.History}
+  World.Instruction{World.Inst i_arg i_op}
+  World.Location
+  World.Opcode{World.OpGo World.OpHop World.OpIfempty World.OpIfenemy World.OpIfsame World.OpIfwall World.OpInfect World.OpLeft World.OpRight}
+  World.Species{World.Species s_name s_prog}
+  World.Terrain{World.Forest World.Hill World.Lake World.Plain}
+  World.World{World.World w_creature w_grid w_species}
+module dependencies:
+package dependencies: array-0.5.1.1@array-0.5.1.1 base-4.9.1.0*
+                      containers-0.5.7.1@containers-0.5.7.1*
+                      deepseq-1.4.2.0@deepseq-1.4.2.0 ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+family instance modules: base-4.9.1.0:Control.Applicative
+                         base-4.9.1.0:Data.Complex base-4.9.1.0:Data.Either
+                         base-4.9.1.0:Data.Functor.Const base-4.9.1.0:Data.Functor.Identity
+                         base-4.9.1.0:Data.List.NonEmpty base-4.9.1.0:Data.Monoid
+                         base-4.9.1.0:Data.Semigroup base-4.9.1.0:Data.Type.Equality
+                         base-4.9.1.0:Data.Version base-4.9.1.0:Data.Void
+                         base-4.9.1.0:GHC.Exts base-4.9.1.0:GHC.Generics
+                         base-4.9.1.0:GHC.IO.Exception base-4.9.1.0:GHC.TypeLits
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Sequence
+import  -/  base-4.9.1.0:Data.Foldable 3e0b6967a1da89945d0e2d47266337a2
+import  -/  base-4.9.1.0:Data.Functor 5ab1dc703df5b482e77efb697833ca3c
+import  -/  base-4.9.1.0:Data.List 07ae2acca6538aa0800bd0a993ac6ac1
+import  -/  base-4.9.1.0:Data.Maybe d876c4ffe4b3c43755a781e8ad860d88
+import  -/  base-4.9.1.0:Data.OldList 27987919d8da2f92e3f472ca81f730f8
+import  -/  base-4.9.1.0:Data.Tuple 7dc4bbb45d2e69c991ffac438beeca11
+import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
+import  -/  base-4.9.1.0:GHC.Enum 3811281f7b5f26da514529cf3ed44009
+import  -/  base-4.9.1.0:GHC.Err 3bba35a16538d33d424682ce66876cdd
+import  -/  base-4.9.1.0:GHC.List ab8c4e523e6c479c549d3bcd5fc4a439
+import  -/  base-4.9.1.0:GHC.Num 00bfaa7b2f9d6084913c0697a8a49ec8
+import  -/  base-4.9.1.0:GHC.Show a027f5ac24879eaba752f44aa90fe511
+import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+import  -/  base-4.9.1.0:Text.Printf 6701574960cd2af960fec5d940be0c25
+import  -/  base-4.9.1.0:Text.Read 75c59863e882ebaec4532e9465e2ee9b
+import  -/  containers-0.5.7.1@containers-0.5.7.1:Data.Sequence 47585f299e23ea17caeacc3eeb88d264
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
+import  -/  ghc-prim-0.5.0.0:GHC.Types 89f8de4f08018c9177c98d979eae0e45
+5ea348268227cb03503b6b5ddb50683a
+  $fBoundedDirection :: GHC.Enum.Bounded World.Direction
+  DFunId
+f336cba989333872a834de4a9ba615d6
+  $fEnumAbility :: GHC.Enum.Enum World.Ability
+  DFunId
+5ea348268227cb03503b6b5ddb50683a
+  $fEnumDirection :: GHC.Enum.Enum World.Direction
+  DFunId
+1e10da245d0b3427237d22006152ffe3
+  $fEnumOpcode :: GHC.Enum.Enum World.Opcode
+  DFunId
+997f78a4a9d7722661792e1976246b8a
+  $fEnumTerrain :: GHC.Enum.Enum World.Terrain
+  DFunId
+f336cba989333872a834de4a9ba615d6
+  $fEqAbility :: GHC.Classes.Eq World.Ability
+  DFunId
+5ea348268227cb03503b6b5ddb50683a
+  $fEqDirection :: GHC.Classes.Eq World.Direction
+  DFunId
+1e10da245d0b3427237d22006152ffe3
+  $fEqOpcode :: GHC.Classes.Eq World.Opcode
+  DFunId
+38852003427d6f8d1616ce2690d4a803
+  $fEqSpecies :: GHC.Classes.Eq World.Species
+  DFunId
+997f78a4a9d7722661792e1976246b8a
+  $fEqTerrain :: GHC.Classes.Eq World.Terrain
+  DFunId
+f336cba989333872a834de4a9ba615d6
+  $fOrdAbility :: GHC.Classes.Ord World.Ability
+  DFunId
+5ea348268227cb03503b6b5ddb50683a
+  $fOrdDirection :: GHC.Classes.Ord World.Direction
+  DFunId
+997f78a4a9d7722661792e1976246b8a
+  $fOrdTerrain :: GHC.Classes.Ord World.Terrain
+  DFunId
+d9ffcca4a125e51143edec6170362b5a
+  $fShowCreature :: GHC.Show.Show World.Creature
+  DFunId
+38852003427d6f8d1616ce2690d4a803
+  $fShowSpecies :: GHC.Show.Show World.Species
+  DFunId
+6e4cb2a8675cf029cb64c89e3f614aaf
+  $fShowWorld :: GHC.Show.Show World.World
+  DFunId
+7aa74853c9870accc66827438a8f28d7
+  $tc'Arch :: GHC.Types.TyCon
+b8039957de69a8fb84815f36560ac238
+  $tc'Creature :: GHC.Types.TyCon
+24f787c9e383545359671cac85c49624
+  $tc'East :: GHC.Types.TyCon
+1a60c14c2cbfa86e6768a5ef6235c34b
+  $tc'Fly :: GHC.Types.TyCon
+9a5a62fbee39106189ba2542bf4dd20b
+  $tc'Forest :: GHC.Types.TyCon
+5eafc8efc6661dfe2ff3477c77b6569d
+  $tc'Grid :: GHC.Types.TyCon
+9cc88bad3e5a69c742673dc21bbe7278
+  $tc'GridCont :: GHC.Types.TyCon
+c1118953317211abe37c96e5410c7704
+  $tc'Hill :: GHC.Types.TyCon
+1d7912223dfb34c22aa6bb16f13250d5
+  $tc'History :: GHC.Types.TyCon
+a36a5fc930e9387f426dcfa7ee8315da
+  $tc'Inst :: GHC.Types.TyCon
+a4dc7f659a39e2443666b53126940934
+  $tc'Lake :: GHC.Types.TyCon
+72a55d385201ad4c4372a1294ddc8b3f
+  $tc'North :: GHC.Types.TyCon
+e5a5aa1da34b688723be5acf9fe2b41d
+  $tc'OpGo :: GHC.Types.TyCon
+3930a9982805705ec5baa0d40da32159
+  $tc'OpHop :: GHC.Types.TyCon
+52066d41da56e0abf183aea4191bf66c
+  $tc'OpIfempty :: GHC.Types.TyCon
+cbe3aa6a92e84a0770a70300ad8835d6
+  $tc'OpIfenemy :: GHC.Types.TyCon
+6d11a707b2222baa61b159af618bb520
+  $tc'OpIfsame :: GHC.Types.TyCon
+e917bb5924d9cd2e1f10021019b7c018
+  $tc'OpIfwall :: GHC.Types.TyCon
+6921d55e3c6b101f0c2cd980191e478a
+  $tc'OpInfect :: GHC.Types.TyCon
+83bae12b6dba975c4bb0413d1749e2a6
+  $tc'OpLeft :: GHC.Types.TyCon
+2df0c808dc4cee946f5abebbe3d664b7
+  $tc'OpRight :: GHC.Types.TyCon
+a6dd8f8da7e9d5e091296c902055293b
+  $tc'Plain :: GHC.Types.TyCon
+af103315ff019892fb3a36b849b09d97
+  $tc'South :: GHC.Types.TyCon
+59883585bfa656ad15f38317b3d3dd1a
+  $tc'Species :: GHC.Types.TyCon
+cd2e5eed972b49ed543a2cdf56cc5413
+  $tc'West :: GHC.Types.TyCon
+86d72cad3f91d1d38dea2bfeff84276a
+  $tc'World :: GHC.Types.TyCon
+fdb0ed321265a25dada4b816115e8dd0
+  $tcAbility :: GHC.Types.TyCon
+789fcea9e9c6ff6e5d820fad9562f1ca
+  $tcCreature :: GHC.Types.TyCon
+cb1e7588f2303fd57e21b2a27732b7ff
+  $tcDirection :: GHC.Types.TyCon
+39ce669fe386e0aab2aa9ea27fec1746
+  $tcGrid :: GHC.Types.TyCon
+db639619ab4cd28a41c0b50657053a8a
+  $tcGridCont :: GHC.Types.TyCon
+07e472ec8445a1451f04e5eb872ad8b1
+  $tcHistory :: GHC.Types.TyCon
+4952b3dde7f23c0ad75f67e45e58a5f2
+  $tcInstruction :: GHC.Types.TyCon
+45daf442f75af2174f79e1b20b4f26a5
+  $tcOpcode :: GHC.Types.TyCon
+86241f8eedf35515954f11d39cbc78e4
+  $tcSpecies :: GHC.Types.TyCon
+53e404a08cc47f44efc3113fd5e24f22
+  $tcTerrain :: GHC.Types.TyCon
+aae6cf3c43272d56ce72e6e705f35f85
+  $tcWorld :: GHC.Types.TyCon
+276eca0ea333aa2325ee51d216598edc
+  $trModule :: GHC.Types.Module
+f336cba989333872a834de4a9ba615d6
+  data Ability = Fly | Arch
+d9ffcca4a125e51143edec6170362b5a
+  data Creature
+    = Creature {c_progIdx :: GHC.Types.Int,
+                c_location :: World.Location,
+                c_direction :: World.Direction,
+                c_species :: World.Species,
+                c_canFly :: GHC.Types.Bool,
+                c_canArch :: GHC.Types.Bool,
+                c_onHillActive :: GHC.Types.Bool}
+9f4fdcd4139873b1b71535b285cb73a2
+  type CreatureLabel = GHC.Types.Int
+5ea348268227cb03503b6b5ddb50683a
+  data Direction = East | South | West | North
+863a21beb7865abbe33bdf39f329f999
+  data Grid
+    = Grid {g_height :: GHC.Types.Int,
+            g_width :: GHC.Types.Int,
+            g_contents :: Data.Sequence.Seq (Data.Sequence.Seq World.GridCont)}
+c2d69bf198ab0f46737f81ca07c84a23
+  data GridCont
+    = GridCont {g_terrain :: World.Terrain,
+                g_creatureP :: GHC.Base.Maybe World.CreatureLabel}
+71eb9c0f3561e7155b3c37cc948f35fa
+  data History = History World.Creature [World.Instruction]
+a336666fe3f23cdc7ae1b396d5cda503
+  data Instruction
+    = Inst {i_op :: World.Opcode, i_arg :: GHC.Types.Int}
+d979f4a984ffa0046b4a5909dda7ef8b
+  type Location = (GHC.Types.Int, GHC.Types.Int)
+1e10da245d0b3427237d22006152ffe3
+  data Opcode
+    = OpHop
+    | OpLeft
+    | OpRight
+    | OpInfect
+    | OpIfempty
+    | OpIfenemy
+    | OpIfsame
+    | OpIfwall
+    | OpGo
+38852003427d6f8d1616ce2690d4a803
+  data Species
+    = Species {s_name :: GHC.Base.String,
+               s_prog :: Data.Sequence.Seq World.Instruction}
+997f78a4a9d7722661792e1976246b8a
+  data Terrain = Plain | Lake | Forest | Hill
+6e4cb2a8675cf029cb64c89e3f614aaf
+  data World
+    = World {w_species :: Data.Sequence.Seq World.Species,
+             w_creature :: Data.Sequence.Seq World.Creature,
+             w_grid :: World.Grid}
+a8d4ea489d918492a11d8f799cc40145
+  abilityReadName :: [GHC.Types.Char]
+7d9e95c6499ee2f93085729b2cdadb40
+  adjustCont ::
+    (World.GridCont -> World.GridCont)
+    -> (GHC.Types.Int, GHC.Types.Int) -> World.Grid -> World.Grid
+082b66d6e2bb2e38fdb3923abea5cb00
+  adjustLine ::
+    (a -> a)
+    -> GHC.Types.Int -> Data.Sequence.Seq a -> Data.Sequence.Seq a
+e94d9c5cd58145465db677c32cd022d6
+  at :: Data.Sequence.Seq a -> GHC.Types.Int -> a
+52424349c92bb8a3ce414c5f690a2522
+  c_canArch :: World.Creature -> GHC.Types.Bool
+  RecSel Left World.Creature
+2496e61baf85bcd3995027ba5310b128
+  c_canFly :: World.Creature -> GHC.Types.Bool
+  RecSel Left World.Creature
+c0d65b9236db0e78ce761a2daa303a0a
+  c_direction :: World.Creature -> World.Direction
+  RecSel Left World.Creature
+1eebba47637373a2992b28ef6a351af5
+  c_location :: World.Creature -> World.Location
+  RecSel Left World.Creature
+43eb14d28fca44f1dc3c0b400126e153
+  c_onHillActive :: World.Creature -> GHC.Types.Bool
+  RecSel Left World.Creature
+e09460b311bbff7e01c4bbd0ec47f416
+  c_progIdx :: World.Creature -> GHC.Types.Int
+  RecSel Left World.Creature
+90cb78802dd2b23ac20e087d1ae8b23b
+  c_species :: World.Creature -> World.Species
+  RecSel Left World.Creature
+d7149bd78841936125379627474a7463
+  contAt ::
+    World.Grid -> (GHC.Types.Int, GHC.Types.Int) -> World.GridCont
+2cc0ff13e07dca6c39688ee3d10b1307
+  creatureAt ::
+    World.World
+    -> World.Grid
+    -> (GHC.Types.Int, GHC.Types.Int)
+    -> GHC.Base.Maybe World.Creature
+a81e66332cc7abba7e29caffb1c01fd3
+  creatureTuple :: World.Creature -> GHC.Base.String
+f76f11d47771268851b20a4e8e3fca2b
+  defaultError :: [GHC.Types.Char]
+44f98368a5e91863c88bc77fa78612fc
+  dirReadName :: [[GHC.Types.Char]]
+f9cf9efee652f9271a8f4916ce7af4af
+  dirShowName :: [GHC.Types.Char]
+a477bc71c7ca8f2f39b662a5b1fa20bd
+  drownError :: Text.Printf.PrintfType t => World.Creature -> t
+8ce94701ee17de1533949df70ca7de9d
+  g_contents ::
+    World.Grid -> Data.Sequence.Seq (Data.Sequence.Seq World.GridCont)
+  RecSel Left World.Grid
+92cf8c9190ece741c6faf803153dddaf
+  g_creatureP :: World.GridCont -> GHC.Base.Maybe World.CreatureLabel
+  RecSel Left World.GridCont
+92e41020514ea81258297eb9a6969a25
+  g_height :: World.Grid -> GHC.Types.Int
+  RecSel Left World.Grid
+bbeca8c41f5a903dfe667641475844f2
+  g_terrain :: World.GridCont -> World.Terrain
+  RecSel Left World.GridCont
+b078319054478ec9cc954491da52237f
+  g_width :: World.Grid -> GHC.Types.Int
+  RecSel Left World.Grid
+86e3f90da569464e812c8a0d47a45957
+  heightError :: [GHC.Types.Char]
+31dcaa5528e79cfdac6058459628c0f5
+  i_arg :: World.Instruction -> GHC.Types.Int
+  RecSel Left World.Instruction
+91157c2b0ef3c1c177ebff9380c4a936
+  i_op :: World.Instruction -> World.Opcode
+  RecSel Left World.Instruction
+9a7c77d354bada207a857d0f467ee7a8
+  make2D :: [[a]] -> Data.Sequence.Seq (Data.Sequence.Seq a)
+afe6fca5f5345f9b186963780d78b43b
+  makeLine :: [a] -> Data.Sequence.Seq a
+6083eb60fa8f0ef124e6279e818b3c97
+  maxCreatures :: GHC.Types.Int
+2dc40951b80246b4ccd251a8efcff168
+  maxHeight :: GHC.Types.Int
+8109138dabafb99bcd16d8e812a2b463
+  maxProgram :: GHC.Types.Int
+82716cc318a59370df87cee4f2042fc0
+  maxSpecies :: GHC.Types.Int
+7a23215239f71afb872d18d4b0d4545b
+  maxWidth :: GHC.Types.Int
+4c509db86c84e1ad8048ba9df2b38584
+  missingArgError :: [GHC.Types.Char]
+4c05ae21a6149d20389debffe7ef4641
+  negRoundError :: [GHC.Types.Char]
+fcb1bb9ef50a80e35124b284c743ce9e
+  nullaryCount :: GHC.Types.Int
+f2e7841bc6ecac8779809238f3407cb5
+  opName :: [[GHC.Types.Char]]
+6408f8cb83dba2b1b17ee907e3851e4e
+  openFileError ::
+    (Text.Printf.PrintfType t, Text.Printf.PrintfArg t1) => t1 -> t
+29c7cf5f38cc2e8304c1473127ada7c9
+  outOfBound :: World.Grid -> World.Location -> GHC.Types.Bool
+0b4658da45809e52e5457d5e7e9043c9
+  outOfBoundError ::
+    (Text.Printf.PrintfType t, Text.Printf.PrintfArg t1,
+     Text.Printf.PrintfArg t2) =>
+    World.Creature -> t2 -> t1 -> t
+3976ffb268a4014f400ec300cf87a3f5
+  overCreatureError :: GHC.Base.String
+30eb73a981d254d87d3302df3965163b
+  overInstError ::
+    (Text.Printf.PrintfType t, Text.Printf.PrintfArg t1) => t1 -> t
+d5956d5eea9a9d04c76f1610fd57fefe
+  overSpeciesError :: GHC.Base.String
+22325e7899e377ae1c7f40f6464b07c3
+  overlapError ::
+    Text.Printf.PrintfType t => World.Creature -> World.Creature -> t
+6249292511a54f7f869ba548b76a3b4b
+  pointMoveBy ::
+    World.Location
+    -> World.Direction -> GHC.Types.Int -> World.Location
+882796930bf2a106262b8c3844e8f75b
+  printHistory :: GHC.Types.Bool -> World.History -> GHC.Base.String
+ce0a974670f5ee340cb2005e2127b9b2
+  printSingleGrid ::
+    Data.Sequence.Seq World.Creature
+    -> GHC.Base.Maybe World.CreatureLabel -> GHC.Base.String
+046423354578ed469050c62547fe8d3c
+  readAbility :: World.Creature -> GHC.Base.String -> World.Ability
+c76d35fe21c235449201743e69ccd738
+  readDir :: GHC.Base.String -> World.Direction
+24d1883882de76eb874be7c04a36781d
+  readInst :: GHC.Base.String -> World.Instruction
+ba97cec0dd5129421b1ffb0cf6450b5c
+  readTerrain :: World.Location -> GHC.Types.Char -> World.Terrain
+9eeb1746e7fa55418e88957d027862ba
+  s_name :: World.Species -> GHC.Base.String
+  RecSel Left World.Species
+9253d151826ce02277169d3d6400d7dd
+  s_prog :: World.Species -> Data.Sequence.Seq World.Instruction
+  RecSel Left World.Species
+3facc5b3a781ca5973c54d1f4315d789
+  showDirLong :: World.Direction -> GHC.Base.String
+e219f1fe2661482015f76b44206ca023
+  showDirShort :: World.Direction -> GHC.Base.String
+e28d199a76df996c526aeb61650c24df
+  swapCont ::
+    (GHC.Types.Int, GHC.Types.Int)
+    -> (GHC.Types.Int, GHC.Types.Int) -> World.Grid -> World.Grid
+61e5214ada9549afbe123bf12d111cab
+  terrainReadName :: [GHC.Types.Char]
+1b37c25eadf8254b3119e09134ca8fdb
+  unknownAbError ::
+    (Text.Printf.PrintfType t, Text.Printf.PrintfArg t1) =>
+    World.Creature -> t1 -> t
+5fc72da1a4c3b80a75b041bfe4122686
+  unknownDirError ::
+    (Text.Printf.PrintfType t, Text.Printf.PrintfArg t1) => t1 -> t
+6214572ab5eb6414f78c74ab0f21f602
+  unknownInstError ::
+    (Text.Printf.PrintfType t, Text.Printf.PrintfArg t1) => t1 -> t
+dedfc893e927b989f4fdcd4554f94206
+  unknownSpecError ::
+    (Text.Printf.PrintfType t, Text.Printf.PrintfArg t1) => t1 -> t
+ab9cd8b299aac8191c3934e4ba61a618
+  unknownTerError ::
+    (Text.Printf.PrintfType t, Text.Printf.PrintfArg t2,
+     Text.Printf.PrintfArg t3, Text.Printf.PrintfArg t1) =>
+    (t3, t2) -> t1 -> t
+8cf27bd023525d73f027b96dc0387349
+  w_creature :: World.World -> Data.Sequence.Seq World.Creature
+  RecSel Left World.World
+ea248ffb82f889db844c774d360659e9
+  w_grid :: World.World -> World.Grid
+  RecSel Left World.World
+30c3aee32c253ea4c84e85693097f182
+  w_species :: World.World -> Data.Sequence.Seq World.Species
+  RecSel Left World.World
+d4bb1ca7ab8a7de2ead1f34e2ff199ef
+  widthError :: [GHC.Types.Char]
+instance [safe] GHC.Enum.Bounded [World.Direction]
+  = World.$fBoundedDirection
+instance [safe] GHC.Enum.Enum [World.Ability] = World.$fEnumAbility
+instance [safe] GHC.Enum.Enum [World.Direction]
+  = World.$fEnumDirection
+instance [safe] GHC.Enum.Enum [World.Opcode] = World.$fEnumOpcode
+instance [safe] GHC.Enum.Enum [World.Terrain] = World.$fEnumTerrain
+instance [safe] GHC.Classes.Eq [World.Ability] = World.$fEqAbility
+instance [safe] GHC.Classes.Eq [World.Direction]
+  = World.$fEqDirection
+instance [safe] GHC.Classes.Eq [World.Opcode] = World.$fEqOpcode
+instance [safe] GHC.Classes.Eq [World.Species] = World.$fEqSpecies
+instance [safe] GHC.Classes.Eq [World.Terrain] = World.$fEqTerrain
+instance [safe] GHC.Classes.Ord [World.Ability]
+  = World.$fOrdAbility
+instance [safe] GHC.Classes.Ord [World.Direction]
+  = World.$fOrdDirection
+instance [safe] GHC.Classes.Ord [World.Terrain]
+  = World.$fOrdTerrain
+instance [safe] GHC.Show.Show [World.Creature]
+  = World.$fShowCreature
+instance [safe] GHC.Show.Show [World.Species] = World.$fShowSpecies
+instance [safe] GHC.Show.Show [World.World] = World.$fShowWorld
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+
